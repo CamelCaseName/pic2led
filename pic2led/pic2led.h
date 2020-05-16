@@ -20,11 +20,15 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-// pic2led.h : Include file for standard system include files,
-// or project specific include files.
+
+//many thanks to Paul on the Solarian Programmer for his implementation and wonderful documentation on how to work with bmp images 
+//https://solarianprogrammer.com/2018/11/19/cpp-reading-writing-bmp-images/
 
 #pragma once
-
+#include <string>
 #include <iostream>
+#include "bmp/BMP.h"
 
-// TODO: Reference additional headers your program requires here.
+class pic2led {
+
+};
