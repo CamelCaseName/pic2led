@@ -29,6 +29,3 @@
 #include <iostream>
 #include "bmp/BMP.h"
 
-class pic2led {
-
-};
