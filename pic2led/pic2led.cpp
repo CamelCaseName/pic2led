@@ -77,38 +77,38 @@ int main()
 					}
 				}
 				else { // portrait
-					for (uint8_t x = 0; x < in.bmp_info_header.height; x++) {
-						for (uint8_t y = 0; y < in.bmp_info_header.width; y++) {
+					for (uint8_t x = 0; x < in.bmp_info_header.width; x++) {
+						for (uint8_t y = 0; y < in.bmp_info_header.height; y++) {
 							if (tmp2 < 8) {
 								++tmp2;
 							}
 							else {
 								tmp2 = 1;
 							}
-							if (in.data[channels * (y * in.bmp_info_header.height + x) + 0] >= lvl) {
-								in.data[channels * (y * in.bmp_info_header.height + x) + 0] = 255; // set BLUE to maximum
+							if (in.data[channels * (y * in.bmp_info_header.width + x) + 0] >= lvl) {
+								in.data[channels * (y * in.bmp_info_header.width + x) + 0] = 255; // set BLUE to maximum
 								of << "f[" << tmp1 / 8 << "].bc" << tmp2 + 0 << "=1;"; //write blue information for pixel
 							}
 							else {
-								in.data[channels * (y * in.bmp_info_header.height + x) + 0] = 0; // set BLUE to 0
+								in.data[channels * (y * in.bmp_info_header.width + x) + 0] = 0; // set BLUE to 0
 								of << "f[" << tmp1 / 8 << "].bc" << tmp2 + 0 << "=0;"; //write blue information for pixel
 							}
 
-							if (in.data[channels * (y * in.bmp_info_header.height + x) + 1] >= lvl) { //set GREEN to maximum
-								in.data[channels * (y * in.bmp_info_header.height + x) + 1] = 255;
+							if (in.data[channels * (y * in.bmp_info_header.width + x) + 1] >= lvl) { //set GREEN to maximum
+								in.data[channels * (y * in.bmp_info_header.width + x) + 1] = 255;
 								of << "f[" << tmp1 / 8 << "].gc" << tmp2 + 0 << "=1;"; //write blue information for pixel
 							}
 							else {
-								in.data[channels * (y * in.bmp_info_header.height + x) + 1] = 0; // set GREEN to 0
+								in.data[channels * (y * in.bmp_info_header.width + x) + 1] = 0; // set GREEN to 0
 								of << "f[" << tmp1 / 8 << "].gc" << tmp2 + 0 << "=0;"; //write blue information for pixel
 							}
 
-							if (in.data[channels * (y * in.bmp_info_header.height + x) + 2] >= lvl) { //set RED to maximum
-								in.data[channels * (y * in.bmp_info_header.height + x) + 2] = 255;
+							if (in.data[channels * (y * in.bmp_info_header.width + x) + 2] >= lvl) { //set RED to maximum
+								in.data[channels * (y * in.bmp_info_header.width + x) + 2] = 255;
 								of << "f[" << tmp1 / 8 << "].rc" << tmp2 + 0 << "=1;"; //write blue information for pixel
 							}
 							else {
-								in.data[channels * (y * in.bmp_info_header.height + x) + 2] = 0; // set RED to 0
+								in.data[channels * (y * in.bmp_info_header.width + x) + 2] = 0; // set RED to 0
 								of << "f[" << tmp1 / 8 << "].rc" << tmp2 + 0 << "=0;"; //write blue information for pixel
 							}
 							//vars for the format thingy

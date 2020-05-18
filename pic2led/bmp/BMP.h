@@ -16,7 +16,7 @@ struct BMPFileHeader {
 struct BMPInfoHeader {
     uint32_t size{ 0 };                      // Size of this header (in bytes)
     int32_t width{ 0 };                      // width of bitmap in pixels
-    int32_t height{ 0 };                     // width of bitmap in pixels
+    int32_t height{ 0 };                     // height of bitmap in pixels
                                              //       (if positive, bottom-up, with origin in lower left corner)
                                              //       (if negative, top-down, with origin in upper left corner)
     uint16_t planes{ 1 };                    // No. of planes for the target device, this is always 1
