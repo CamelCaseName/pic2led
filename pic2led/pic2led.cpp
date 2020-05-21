@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	std::vector<uint8_t>tempdata;
+	//std::vector<uint8_t>tempdata;
 	std::string strtmp;
 	cout << "Please specify the full location of the image" << endl;
 	std::getline(std::cin, strtmp); //get path
@@ -35,7 +35,7 @@ int main()
 
 				cout << in.bmp_info_header.width << "wxh" << in.bmp_info_header.height << endl;
 
-				tempdata.resize(64*2*channels);
+				//tempdata.resize(64*2*channels);
 			
 
 				uint16_t tmp1 = 0;
@@ -45,7 +45,8 @@ int main()
 				uint8_t tmpb = 0;
 				
 				if (in.bmp_info_header.height <= 32) { // landscape
-
+					/*
+					//not needed anymore
 					//copy rows 31 and 15
 					for (uint8_t x = 0; x < 64; x++){
 						tempdata[channels * x + 0] = in.data[channels * (31 * in.bmp_info_header.width + x) + 0]; //copy blue data
@@ -74,7 +75,7 @@ int main()
 						in.data[channels * (0 * in.bmp_info_header.width + x) + 0] = tempdata[channels * (1 * 64 + x) + 0]; //copy blue data
 						in.data[channels * (0 * in.bmp_info_header.width + x) + 1] = tempdata[channels * (1 * 64 + x) + 1]; //copy green data
 						in.data[channels * (0 * in.bmp_info_header.width + x) + 2] = tempdata[channels * (1 * 64 + x) + 2]; //copy red data
-					}
+					}*/
 					//convert picture
 					for (uint8_t y = 0; y < in.bmp_info_header.height; y++) {
 						for (uint8_t x = 0; x < in.bmp_info_header.width; x++) {
@@ -118,7 +119,7 @@ int main()
 				}
 
 				else { // portrait
-
+					/*
 					//copy rows 31 and 15
 					for (uint8_t x = 0; x < 64; x++) {
 						tempdata[channels * x + 0] = in.data[channels * (x * in.bmp_info_header.width + 0) + 0]; //copy blue data
@@ -148,7 +149,7 @@ int main()
 						in.data[channels * (x * in.bmp_info_header.width + 31) + 1] = tempdata[channels * (1 * 64 + x) + 1]; //copy green data
 						in.data[channels * (x * in.bmp_info_header.width + 31) + 2] = tempdata[channels * (1 * 64 + x) + 2]; //copy red data
 					}
-
+					*/
 					for (uint8_t x = 0; x < in.bmp_info_header.width; x++) {
 						for (uint8_t y = 0; y < in.bmp_info_header.height; y++) {
 							if (tmp2 < 8) {
